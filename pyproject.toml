@@ -1,0 +1,40 @@
+[project]
+name = "Processors"
+version = "0.1.0"
+description = "Test modules"
+readme = "README.md"
+requires-python = ">=3.12"
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "ruff>=0.0.267",
+]
+
+[tool.ruff]
+select = ["E", "F", "I"]  # I — сортировка импортов (аналог isort)
+line-length = 135
+target-version = "py311"
+fix = true
+
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+]
+
+[tool.ruff.format]
+quote-style = "preserve"
+line-ending = "auto"
+
+[tool.isort]
+profile = "black"
+line_length = 120
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+skip_gitignore = true
